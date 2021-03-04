@@ -1,0 +1,293 @@
+body
+	padding-top: 76px
+	+media-breakpoint-down(lg)
+		padding-top: 50px
+
+header
+	background: $white
+	+pos(fix, 0 0 null 0)
+	z-index: 1000
+	border-bottom: 1px solid darken($white, 5%)
+	.header-main
+	.header-wrap
+		+flexbox
+		justify-content: space-between
+		align-items: center
+		align-content: center
+	.col-right
+		+flexbox
+		justify-content: flex-end
+		align-items: center
+		align-content: center
+	.sitelogo
+		+flexbox
+		align-items: center
+		align-content: center
+		justify-content: center
+		height: 76px
+		+media-breakpoint-down(lg)
+			height: 50px
+		a
+			display: block
+			img
+				height: 50px
+				+media-breakpoint-down(lg)
+					height: 30px
+	.btn-showmenu
+		display: none
+		width: 20px
+		height: 15px
+		+pos(rel,null)
+		&::before
+			content: ''
+			display: block
+			width: 100%
+			height: 1px
+			background: $main
+			+pos(abs, 0 0 null 0)
+			+transition(all,0.5s)
+		&::after
+			content: ''
+			display: block
+			width: 100%
+			height: 1px
+			background: $main
+			+pos(abs, null 0 0 0)
+			+transition(all,0.5s)
+		span
+			display: block
+			width: 100%
+			height: 1px
+			background: $main
+			+transition(all,0.5s)
+		&.active
+			&::before
+				top: 50%
+				+transform(translateY(-50%)rotateZ(45deg))
+			&::after
+				bottom: 50%
+				+transform(translateY(50%)rotateZ(-45deg))
+			span
+				opacity: 0
+				visibility: hidden
+
+		+media-breakpoint-down(lg)
+			+flexbox
+			align-items: center
+			align-content: center
+
+	.menu
+		margin-right: 20px
+		+media-breakpoint-down(lg)
+			+pos(fix, 50px 0 0 0)
+			margin-right: 0
+			background: $white
+			z-index: 1000
+			display: none
+		.menu-link
+			+flexbox
+			align-items: center
+			align-content: center
+			+media-breakpoint-down(lg)
+				display: block
+				padding: 0px 40px
+			> li
+				+flexbox
+				align-items: center
+				align-content: center
+				height: 76px
+				+pos(rel,null)
+				+media-breakpoint-down(lg)
+					height: unset
+					display: block
+					border-bottom: 1px solid darken($white, 10%)
+					+pos(rel,null)
+				+ li
+					> a
+						&:before
+							content: ''
+							display: block
+							width: 0
+							height: 12px
+							border-left: 1px dotted color-rgba($white,0.5)
+							+pos(abs, 50% null null 0)
+							+transform(translateY(-50%))
+				> a
+					display: block
+					width: 100%
+					color: $main
+					+fs(18rem)
+					font-weight: 500
+					// text-transform: uppercase
+					padding: 0px 15px
+					+pos(rel,null)
+					+media-breakpoint-down(lg)
+						color: $main
+						padding: 10px 0
+				.btn-showsub
+					display: none
+					+media-breakpoint-down(lg)
+						display: block
+						+pos(abs, 6px 0 null null)
+						z-index: 100
+						+transition(all,0.3s)
+						&::before
+							content: '\f107'
+							display: block
+							width: 30px
+							line-height: 30px
+							text-align: center
+							+fs(18rem)
+						&.active
+							+transform(scale(1,-1))
+				.sub
+					display: none
+					+pos(abs, 100% null null null)
+					min-width: 250px
+					z-index: 1100
+					background: $white
+					box-shadow: 0 5px 15px color-rgba($black,0.45)
+					+media-breakpoint-down(lg)
+						+pos(static,null)
+						box-shadow: none
+					ul
+						padding: 10px 0
+						background: #f3f3f3
+						+pos(rel,null)
+						+media-breakpoint-down(lg)
+							width: 100%
+							background: $white
+							border-top: 1px solid darken($white, 10%)
+							padding: 0
+						li
+							+pos(rel,null)
+							+ li
+								+media-breakpoint-down(lg)
+									border-top: 1px dashed darken($white, 10%)
+							a
+								display: block
+								padding: 12px 15px
+								+fs(16rem)
+								line-height: 20px
+								font-weight: 500
+								+media-breakpoint-down(lg)
+									+fs(16rem)
+									padding: 10px 0
+									color: darken($white, 50%)
+							&:hover
+								background: $white
+							&.active
+								+media-breakpoint-down(lg)
+									a
+										color: $red
+										font-weight: 600
+				&:hover
+					+media-breakpoint-up(xl)
+						background: darken($white,10%)
+						.sub
+							display: block
+				&.active
+					+media-breakpoint-down(lg)
+						> a
+							color: $yellow
+							font-weight: 600
+	
+	.language
+		+flexbox
+		align-items: center
+		align-content: center
+		+media-breakpoint-down(lg)
+			padding: 15px 40px
+		// a
+		// 	+fs(13rem)
+		// 	font-weight: 500
+		// 	color: #5e76a5
+		// 	+ a
+		// 		&:before
+		// 			content: '/'
+		// 			color: #5e76a5
+		// 			margin: 0px 5px
+		// 	&.active
+		// 		color: $white
+		// 		+media-breakpoint-down(lg)
+		// 			color: $blue
+		// 			font-weight: 700
+		.dropdown
+			&:hover, &:active, &:focus
+				outline: none
+				border: none
+			.dropdown-toggle
+				+fs(13rem)
+				font-weight: 500
+				background: none
+				margin: 0
+				padding: 0
+				border: none
+				color: $white
+				+media-breakpoint-down(lg)
+					color: $main
+					+fs(16rem)
+					text-transform: uppercase
+				&:hover, &:active, &:focus
+					outline: none
+					border: none
+			.dropdown-menu
+				background: $red
+				width: 100px
+				min-width: 0
+				max-width: unset
+				.dropdown-item
+					+fs(13rem)
+					color: $white
+					opacity: 0.8
+					&:hover, &.active
+						opacity: 1
+						background: color-rgba($white,0.1)
+	.cart
+		.cart-toggle
+			cursor: pointer
+			&:hover
+				color: $yellow
+	.search
+		margin-left: 15px
+		+pos(rel,null)
+		+media-breakpoint-down(lg)
+			margin-left: 0
+		.search-toggle
+			color: $main
+			cursor: pointer
+			+fs(16rem)
+			+media-breakpoint-down(lg)
+				+flexbox
+				width: 20px
+				height: 16px
+				align-items: center
+				align-content: center
+				justify-content: center
+			&:hover
+				color: $yellow
+		.search-wrap
+			display: none
+			+pos(abs, 50px 0 null null)
+			z-index: 500
+			.searchbox
+				input.searchinput
+					background: $main
+					color: $white
+					+fs(16rem)
+					line-height: 1
+					padding: 8px 20px
+					border: none
+				button.searchbutton
+					+fs(0)
+					color: $white
+					+pos(abs, 10px 10px null null)
+					opacity: 0.5
+					&::before
+						content: '\f002'
+						+fs(16rem)
+					&:hover
+						opacity: 1
+
+
+

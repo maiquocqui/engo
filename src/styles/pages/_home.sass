@@ -1,0 +1,312 @@
+// .home-stitle
+// 	font-family: 'Fira Sans Condensed', sans-serif
+// 	+fs(21rem)
+// 	font-weight: 500
+// 	color: darken($white, 50%)
+// 	text-transform: uppercase
+// 	+media-breakpoint-down(lg)
+// 		+fs(16rem)
+// 	+media-breakpoint-down(sm)
+// 		+fs(14rem)
+
+.home-title
+	// font-family: 'Fira Sans Condensed', sans-serif
+	+fs(30rem)
+	font-weight: 700
+	line-height: 1.2
+	color: $main
+	text-transform: uppercase
+	margin-bottom: 25px
+	> *
+		// font-family: 'Fira Sans Condensed', sans-serif
+		font-weight: 700
+	+media-breakpoint-down(lg)
+		+fs(22rem)
+	+media-breakpoint-down(sm)
+		+fs(18rem)
+	&::after
+		content: ''
+		display: block
+		width: 181px
+		height: 16px
+		margin-top: 10px
+		background: url(../img/line.png) center no-repeat
+		+media-breakpoint-down(lg)
+			height: 10px
+			background-size: auto 100%
+			background-position: left center
+	// &.sm
+	// 	+fs(22rem)
+	// 	+media-breakpoint-down(lg)
+	// 		+fs(18rem)
+	&.text-right
+		&::after
+			width: 100%
+			background-position: left top
+			+transform(scale(-1,1))
+	&.text-center
+		&::after
+			content: ''
+			width: 100%
+			background: url(../img/line2.png) center no-repeat
+			+media-breakpoint-down(lg)
+				height: 10px
+				background-size: auto 100%
+				background-position: center
+
+.home-section
+	padding: 50px 0
+	+pos(rel,null)
+	.bg
+		+pos(abs, 0 null 0 0)
+		right: 0
+		z-index: -1
+		filter: brightness(60%)
+		background-size: cover !important
+
+.home-course
+	@extend .home-section
+	.course-list
+		.course
+			+pos(rel,null)
+			display: block
+			cursor: pointer
+			+media-breakpoint-down(md)
+				margin-bottom: 15px
+			.img
+				display: block
+				img
+					width: 100%
+			.caption
+				+flexbox
+				padding: 10px
+				align-items: flex-end
+				+pos(abs, 0 null 0 0)
+				right: 0
+				z-index: 3
+				background: color-rgba($black,0.3)
+				+transition(all,0.5s)
+				.name
+					+fs(18rem)
+					font-weight: 500
+					color: $white
+			&:hover
+				.caption
+					background: color-rgba($black,0)
+
+.home-archive
+	@extend .home-section
+
+.home-customer
+	@extend .home-section
+	.group-list
+		.group
+			display: block
+			.img
+				display: block
+				margin-bottom: 15px
+				overflow: hidden
+				img
+					width: 100%
+					+transition(all,0.3s)
+			.caption
+				.name 
+					+flexbox
+					align-items: center
+					align-content: center
+					margin-bottom: 10px
+					+transition(all,0.3s)
+					.fa
+						+fs(22rem)
+						margin-right: 10px
+					span
+						+fs(22rem)
+						font-weight: 600
+			&:hover
+				.img
+					img
+						+transform(scale(1.1,1.1))
+				.name
+					color: $yellow
+
+.home-feedback
+	@extend .home-section
+	.feedback-slide
+		max-width: 800px
+		margin: 0 auto
+		.content
+			+media-breakpoint-up(lg)
+				+fs(18rem)
+		.slick-dots
+			+pos(abs, null null -30px null)
+			left: 50%
+			+transform(translateX(-50%))
+			// +media-breakpoint-down(md)
+			// 	bottom: 10px
+			li
+				display: inline-block
+				width: 10px
+				height: 10px
+				+bor-rad(100px)
+				background: $white
+				cursor: pointer
+				opacity: 0.5
+				+transition(all,0.5s)
+				+ li
+					margin-left: 10px
+				&.slick-active
+					width: 30px
+					opacity: 1
+				button
+					display: none
+
+.home-partner
+	background: $main
+	.partner
+		+flexbox
+		height: 150px
+		align-items: center
+		align-content: center
+		justify-content: center
+		filter: grayscale(100%)
+		+media-breakpoint-down(md)
+			height: 100px
+		img
+			max-width: 80%
+			max-height: 80%
+
+.home-blog
+	@extend .home-section
+	.news-list
+		.news-item
+			margin-bottom: 15px
+			border: 1px solid darken($white, 5%)
+			.img
+				display: block
+				margin-bottom: 10px
+				img
+					width: 100%
+			.caption
+				padding: 20px
+				time
+					display: block
+					+fs(14rem)
+					color: darken($white,30)
+					margin-bottom: 5px
+					+media-breakpoint-down(sm)
+						+fs(12rem)
+					&:before
+						content: '\e836'
+						font-family: 'linearicons-free'
+						margin-right: 10px
+				.name
+					+fs(18rem)
+					font-weight: 600
+					+textover(3)
+					margin-bottom: 15px
+				.des
+					+textover(3)
+					margin-bottom: 15px
+					+media-breakpoint-down(sm)
+						+fs(13rem)
+				.btn-readmore
+					@extend .bt-primary
+					display: inline-block
+
+.home-brand
+	@extend .home-section
+	.bg
+		filter: brightness(100%)
+	.block-content
+		max-width: 960px
+		margin: 0 auto 30px
+	.brands
+		+flexbox
+		justify-content: center
+		align-items: center
+		.brand
+			+flexbox
+			width: 200px
+			height: 150px
+			align-items: center
+			align-content: center
+			justify-content: center
+			background: $white
+			+media-breakpoint-down(lg)
+				height: 100px
+			+media-breakpoint-down(sm)
+				height: 80px
+			+ .brand
+				margin-left: 30px
+			img
+				max-width: 80%
+				max-height: 80%
+
+.home-cert
+	@extend .home-section
+	.cert-slide
+		+pos(rel,null)
+		margin: 0px -15px
+		+media-breakpoint-down(sm)
+			margin: 0px 10px
+		.slick-arrow
+			+pos(abs, 50% null null null)
+			+transform(translateY(-50%))
+			+fs(0)
+			z-index: 5
+			&::before
+				content: ''
+				+fs(16rem)
+				width: 30px
+				height: 30px
+				+flexbox()
+				align-items: center
+				align-content: center
+				justify-content: center
+				color: $white
+				+bor-rad(100%)
+				background: color-rgba($black,0.3)
+			&:hover
+				&::before
+					background: $blue
+			&.slick-prev
+				left: -30px
+				+media-breakpoint-down(sm)
+					left: -15px
+				&::before
+					content: '\f104'
+			&.slick-next
+				right: -30px
+				+media-breakpoint-down(sm)
+					right: -15px
+				&::before
+					content: '\f105'
+		.item
+			padding: 0px 15px
+			+media-breakpoint-down(sm)
+				padding: 0px 10px
+			.cert
+				+flexbox
+				height: 165px
+				justify-content: center
+				align-items: center
+				align-content: center
+				+bor-rad(5px)
+				background: $white
+				border: 1px solid darken($white,20%)
+				+media-breakpoint-down(lg)
+					height: 100px
+				img
+					max-width: 80%
+					max-height: 80%
+
+.home-career
+	@extend .home-section
+	margin-bottom: 60px
+	+media-breakpoint-down(sm)
+		.col-12
+			&:nth-child(1)
+				order: 2
+			&:nth-child(2)
+				order: 1
+				margin-bottom: 15px

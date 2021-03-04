@@ -1,0 +1,126 @@
+footer
+	+pos(rel,null)
+	background: darken($white, 5%)
+	// &::before
+	// 	content: ''
+	// 	display: block
+	// 	+pos(abs, 0 null 0 0)
+	// 	right: 0
+	// 	// z-index: -1
+	// 	background: url(../img/hv.png) bottom left no-repeat
+	// 	background-size: auto 100%
+	// 	opacity: 0.1
+	.col-12
+		+media-breakpoint-down(lg)
+			margin-bottom: 30px
+		+media-breakpoint-down(md)
+			margin-bottom: 15px
+
+	.footer-top
+
+		// background: url(../img/.jpg) center center / cover no-repeat
+		padding: 30px 0
+		+media-breakpoint-down(md)
+			text-align: center
+	.footer-title
+		+fs(16rem)
+		color: $main
+		// font-family: 'cooper'
+		font-weight: 700
+		text-transform: uppercase
+		margin-bottom: 15px
+		+media-breakpoint-down(md)
+			+fs(14rem)
+	.footer-about
+		+media-breakpoint-down(md)
+			text-align: center
+	.sitelogo
+		margin-bottom: 20px
+		a
+			display: block
+			img
+				height: 50px
+	.contact-info
+		ul
+			li
+				+pos(rel,null)
+				font-weight: normal
+				line-height: 1.3
+				color: $main
+				margin-bottom: 10px
+				padding-left: 45px
+				+flexbox
+				align-items: center
+				align-content: center
+				min-height: 50px
+				+media-breakpoint-down(lg)
+					+fs(13rem)
+				.icon
+					// display: none
+					+pos(abs, 50% null null 0)
+					+transform(translateY(-50%))
+					+flexbox
+					align-items: center
+					align-content: center
+					justify-content: center
+					width: 40px
+					height: 40px
+					background: $white
+					color: $main
+					+bor-rad(100px)
+				a
+					color: $main
+					&:hover
+						color: $yellow
+	.footer-link
+		ul
+			li
+				+pos(rel,null)
+				margin-bottom: 7px
+				+media-breakpoint-down(lg)
+					+fs(13rem)
+				a
+					color: $main
+					&:hover
+						color: $yellow
+	.social
+		+flexbox()
+		align-items: center
+		align-content: center
+		margin-bottom: 8px
+		a
+			+ a
+				margin-left: 10px
+			+flexbox
+			align-items: center
+			align-content: center
+			justify-content: center
+			width: 40px
+			height: 40px
+			+bor-rad(100%)
+			background: $yellow
+			color: $main
+			.fa
+				+fs(18rem)
+			&:hover
+				background: $main
+				color: $yellow
+	.bct
+		img
+			height: 50px
+	.footer-bottom
+		border-top: 1px solid $yellow
+		padding: 20px 0
+	.footer-wrap
+		+flexbox
+		align-items: center
+		align-content: center
+		justify-content: space-between
+		+media-breakpoint-down(md)
+			flex-wrap: wrap
+			justify-content: center
+			text-align: center
+		.copyright
+			+fs(14rem)
+			+media-breakpoint-down(md)
+				margin-bottom: 10px
