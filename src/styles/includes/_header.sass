@@ -246,6 +246,8 @@ header
 	.cart
 		.cart-toggle
 			cursor: pointer
+			+media-breakpoint-down(lg)
+				display: none
 			&:hover
 				color: $yellow
 	.search
@@ -264,12 +266,15 @@ header
 				align-items: center
 				align-content: center
 				justify-content: center
+				color: $main
 			&:hover
 				color: $yellow
 		.search-wrap
 			display: none
 			+pos(abs, 50px 0 null null)
 			z-index: 500
+			+media-breakpoint-down(lg)
+				+pos(fix, 51px 15px null null)
 			.searchbox
 				input.searchinput
 					background: $main

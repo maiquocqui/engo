@@ -44,7 +44,7 @@ gulp.task('concat-css', function() {
             // "bower_components/hover/css/hover.css",
             // "bower_components/animate.css/animate.css",
             "bower_components/fontawesome/css/font-awesome.css",
-            "bower_components/linearicons/icon-font.min.css",
+            "bower_components/linearicons/dist/web-font/style.css",
             // "bower_components/k-flex/dist/css/k-flex.css",
             // "bower_components/jquery-bar-rating/dist/themes/fontawesome-stars.css",
             // "bower_components/responsive-tabs/css/responsive-tabs.css",
