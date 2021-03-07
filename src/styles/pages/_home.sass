@@ -194,49 +194,6 @@
 
 .home-blog
 	@extend .home-section
-	.news-list
-		.news-item
-			margin-bottom: 30px
-			border: 1px solid darken($white, 5%)
-			+media-breakpoint-down(sm)
-				margin-bottom: 15px
-			.img
-				display: block
-				margin-bottom: 10px
-				img
-					width: 100%
-			.caption
-				padding: 20px
-				+media-breakpoint-down(md)
-					padding: 15px
-				time
-					display: block
-					+fs(14rem)
-					color: darken($white,30)
-					margin-bottom: 5px
-					+media-breakpoint-down(sm)
-						+fs(12rem)
-					&:before
-						content: '\e836'
-						font-family: 'linearicons-free'
-						margin-right: 10px
-				.name
-					+fs(18rem)
-					font-weight: 600
-					+textover(3)
-					margin-bottom: 15px
-					+media-breakpoint-down(md)
-						+fs(16rem)
-						margin-bottom: 10px
-				.des
-					+textover(3)
-					margin-bottom: 15px
-					+media-breakpoint-down(md)
-						+fs(13rem)
-						margin-bottom: 10px
-				.btn-readmore
-					@extend .bt-primary
-					display: inline-block
 
 .home-brand
 	@extend .home-section
