@@ -1,0 +1,25 @@
+.test-page
+	padding: 30px 0
+	background: $yellow
+.test-form
+	max-width: 550px
+	margin: 0 auto
+.form-wrap
+	.form-input
+		margin-top: 1rem
+		label
+			display: block
+		input
+			+bor-rad(5px)
+			padding: 8px 1rem
+			border: 1px solid darken($white, 10%)
+			width: 100%
+	.btn-wrap
+		text-align: center
+		justify-content: center
+	input[type="submit"]
+		border: none
+		@extend .bt-secondary
+		@extend .bt-secondary.sm
+		display: inline-block
+		margin-top: 1rem

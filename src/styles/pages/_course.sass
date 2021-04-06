@@ -76,3 +76,57 @@
 				.btn-readmore
 					@extend .bt-primary
 					display: inline-block
+
+.course-detail
+	.course-img
+		text-align: center
+	.course-info
+		+media-breakpoint-down(sm)
+			margin-top: 1rem
+		.course-name
+			+fs(36rem)
+			font-weight: 700
+			+media-breakpoint-down(sm)
+				+fs(24rem)
+		.course-price
+			margin-top: .5rem
+			+fs(24rem)
+			font-weight: 700
+			+media-breakpoint-down(sm)
+				+fs(18rem)
+		.course-desc
+			+fs(16rem)
+			margin-top: 1rem
+		.btn-contact
+			@extend .bt-primary
+			@extend .bt-primary.sm
+			display: inline-block
+			margin-top: 2rem
+	.course-full-description
+		margin-top: 1rem
+		.nav
+			margin: 0
+			padding: 0
+			border: none
+			border-bottom: 1px solid darken($white,5%)
+			.nav-item
+				margin: 0
+				padding: 0
+				border: none
+				a
+					margin: 0
+					border: none
+					+fs(18rem)
+					color: darken($white, 50%)
+					font-weight: 600
+					margin-bottom: -2px
+					&.active
+						border-bottom: 3px solid $yellow
+						color: $main
+		.tab-pane
+			padding: 2rem 1rem
+			+media-breakpoint-down(sm)
+				padding: 1rem 0
+
+.course-relative
+	margin-top: 1rem

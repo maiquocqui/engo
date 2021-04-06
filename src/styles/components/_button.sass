@@ -27,6 +27,18 @@
 		padding: 10px 40px
 		+media-breakpoint-down(sm)
 			padding: 4px 17px
+.bt-secondary
+	@extend .bn-button
+	background: $main
+	color: $white
+	&:hover
+		background: $black
+		color: $yellow
+	&.sm
+		+fs(15rem)
+		padding: 10px 40px
+		+media-breakpoint-down(sm)
+			padding: 4px 17px
 .bt-outline
 	@extend .bn-button
 	padding: 7px 28px
